@@ -17,4 +17,10 @@ router
   .patch(authController.restrictTo('admin'), orderController.updateOrder)
   .delete(authController.restrictTo('admin'), orderController.deleteOrder);
 
+router.get(
+  '/checkout-session/:orderId',
+  authController.protect,
+  orderController.getCheckoutSession
+);
+
 module.exports = router;

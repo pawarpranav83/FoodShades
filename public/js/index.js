@@ -5,6 +5,6 @@ navigator.geolocation.getCurrentPosition(
     // console.log(position);
   },
   () => {
-    alert("Could not get your position");
+    alert('Could not get your position');
   }
 );

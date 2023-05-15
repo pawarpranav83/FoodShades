@@ -2,10 +2,7 @@
 
 // 'use strict';
 
-// console.log(
-//   (restContainer =
-//     document.querySelector('.restContainer').dataset.restaurantid)
-// );
+// import Stripe from 'https://js.stripe.com/v3/';
 
 const hideAlert = () => {
   const el = document.querySelector('.alert');
@@ -145,7 +142,7 @@ const addToCartClicked = (event) => {
   addItemToCart(title, price, veg, description);
 };
 
-const placeOrder = () => {
+const placeOrder = async () => {
   if (document.querySelector('.cart-row')) {
     const totalPrice = updateCartTotal();
 
@@ -184,7 +181,9 @@ const placeOrder = () => {
     const restId = restContainer.dataset.restaurantid;
     // console.log(restId);
 
-    processingOrder(totalPrice, dishes, userId, restId);
+    const orderId = await processingOrder(totalPrice, dishes, userId, restId);
+    // console.log(orderId);
+    orderDish(orderId);
   } else {
     showAlert('success', 'No dishes selected!');
   }
@@ -238,210 +237,36 @@ const processingOrder = async (price, dishes, userId, restaurantId) => {
     const finalRes = await res.json();
     // console.log(finalRes.data._id);
     const orderId = finalRes.data._id;
+    return orderId;
 
-    if (finalRes.status === 'success') {
-      showAlert('success', 'Order placed!');
-      window.setTimeout(() => {
-        location.assign(`/orderPlaced/${orderId}`);
-      }, 1000);
-    }
+    // if (finalRes.status === 'success') {
+    //   showAlert('success', 'Processing...');
+    //   window.setTimeout(() => {
+    //     location.assign(`/orderPlaced/${orderId}`);
+    //   }, 1000);
+    // }
   } catch (err) {
     console.error(err.response.data);
   }
 };
 
-// function priceCheck(value, condition) {
-//   if (condition) {
-//     subTotal += value;
-//     total += value;
-//   } else {
-//     subTotal -= value;
-//     total -= value;
-//   }
+const stripe = Stripe(
+  'pk_test_51N82EgSBM2O7fXpbAk5qbtqbI5DAdNHZTh7PbbrXiS7NyMFP6zei6Wf7yt6bltng2RHcRluNbkVpbaRfRhaEWpy900vrfleaEI'
+);
 
-//   let subTotalhtml = `<div class="subtotalPrice">₹${subTotal}</div>`;
-//   let totalhtml = `<div class="totalPrice">₹${total}</div>`;
+const orderDish = async (orderId) => {
+  try {
+    const res = await fetch(`/api/v1/orders/checkout-session/${orderId}`, {
+      method: 'GET',
+    });
 
-//   document.querySelector('.subtotalPrice').remove();
-//   document.querySelector('.totalPrice').remove();
+    const finalRes = await res.json();
+    // console.log(finalRes.session.id);
+    const session = finalRes.session;
 
-//   document
-//     .querySelector('.subtotal')
-//     .insertAdjacentHTML('beforeend', subTotalhtml);
-//   document.querySelector('.total').insertAdjacentHTML('beforeend', totalhtml);
-// }
-
-// function increaseCountFunction(e) {
-//   e.preventDefault();
-
-//   const price =
-//     (ele.parentElement.parentElement.nextElementSibling.textContent.slice(1) *
-//       1) /
-//     (ele.previousElementSibling.textContent * 1);
-
-//   // console.log(price);
-//   // console.log(el.previousElementSibling.textContent);
-
-//   ele.previousElementSibling.textContent++;
-
-//   ele.parentElement.parentElement.nextElementSibling.textContent = `₹${
-//     ele.parentElement.parentElement.nextElementSibling.textContent.slice(1) *
-//       1 +
-//     price
-//   }`;
-
-//   priceCheck(price, true);
-// }
-
-// const addToCart = document.querySelectorAll('.addToCart');
-// const cartDetails = document.querySelector('.cartDetails');
-// let increaseCount = document.querySelectorAll('.increaseCount');
-// let decreaseCount = document.querySelectorAll('.decreaseCount');
-
-// let i = 1;
-// let subTotal = 0;
-// let total = 40;
-
-// // const function dishCountChange = ()
-
-// addToCart.forEach((ele) => {
-//   ele.addEventListener('click', function (e) {
-//     e.preventDefault();
-
-//     let html = `
-//     <div class="item item${ele.dataset.name.replaceAll(' ', '')}">
-//     <img src="/Images/dish1.png" alt="" class="dishImg dish1" />
-//     <div class="nameCounter">
-//     <div class="dishName">${ele.dataset.name}</div>
-//     <div class="counter">
-//     <button class="decreaseCount countBtn">&#8211;</button>
-//     <div class="dishCount ${ele.dataset.name.replaceAll(' ', '')}">1</div>
-//     <button class="increaseCount countBtn">+</button>
-//     </div>
-//     </div>
-//     <div class="price">₹${ele.dataset.price}</div>
-//     </div>`;
-
-//     if (document.querySelector(`.${ele.dataset.name.replaceAll(' ', '')}`)) {
-//       let dishCount2 = document.querySelector(
-//         `.${ele.dataset.name.replaceAll(' ', '')}`
-//       );
-//       dishCount2.textContent++;
-
-//       dishCount2.parentElement.parentElement.nextElementSibling.textContent = `₹${
-//         dishCount2.parentElement.parentElement.nextElementSibling.textContent.slice(
-//           1
-//         ) *
-//           1 +
-//         ele.dataset.price * 1
-//       }`;
-//     } else {
-//       // if (i === 1)
-//       document
-//         .querySelector('.priceSummary')
-//         .insertAdjacentHTML('beforebegin', html);
-//       // else {
-//       //   document.querySelector(`.item`).insertAdjacentHTML('afterend', html);
-//       // }
-
-//       if (document.querySelector('.itemEmpty'))
-//         document.querySelector('.itemEmpty').remove();
-
-//       // i++;
-
-//       // if (i === 1) {
-//       increaseCount = document.querySelectorAll(`.increaseCount`);
-//       decreaseCount = document.querySelectorAll(`.decreaseCount`);
-
-//       increaseCount.forEach((ele) => {
-//         ele.addEventListener('click', (e) => {
-//           e.preventDefault();
-//           // e.stopPropagation();
-
-//           const price =
-//             (ele.parentElement.parentElement.nextElementSibling.textContent.slice(
-//               1
-//             ) *
-//               1) /
-//             (ele.previousElementSibling.textContent * 1);
-
-//           // console.log(price);
-//           // console.log(el.previousElementSibling.textContent);
-
-//           ele.previousElementSibling.textContent++;
-
-//           ele.parentElement.parentElement.nextElementSibling.textContent = `₹${
-//             ele.parentElement.parentElement.nextElementSibling.textContent.slice(
-//               1
-//             ) *
-//               1 +
-//             price
-//           }`;
-
-//           priceCheck(price, true);
-//         });
-//       });
-
-//       decreaseCount.forEach((ele) => {
-//         ele.addEventListener('click', (e) => {
-//           e.preventDefault();
-//           e.stopPropagation();
-
-//           if (ele.nextElementSibling.textContent * 1 === 1) {
-//             ele.parentElement.parentElement.parentElement.remove();
-//           }
-
-//           const price =
-//             (ele.parentElement.parentElement.nextElementSibling.textContent.slice(
-//               1
-//             ) *
-//               1) /
-//             (ele.nextElementSibling.textContent * 1);
-
-//           ele.nextElementSibling.textContent--;
-
-//           ele.parentElement.parentElement.nextElementSibling.textContent = `₹${
-//             ele.parentElement.parentElement.nextElementSibling.textContent.slice(
-//               1
-//             ) *
-//               1 -
-//             price
-//           }`;
-
-//           priceCheck(price, false);
-//         });
-//       });
-
-//       //   i--;
-//       // }
-//     }
-
-//     subTotal += Number(ele.dataset.price);
-//     total += Number(ele.dataset.price);
-
-//     let subTotalhtml = `<div class="subtotalPrice">₹${subTotal}</div>`;
-//     let totalhtml = `<div class="totalPrice">₹${total}</div>`;
-
-//     document.querySelector('.subtotalPrice').remove();
-//     document.querySelector('.totalPrice').remove();
-
-//     document
-//       .querySelector('.subtotal')
-//       .insertAdjacentHTML('beforeend', subTotalhtml);
-//     document.querySelector('.total').insertAdjacentHTML('beforeend', totalhtml);
-//   });
-// });
-
-// const placeOrder = document.querySelector('.placeOrder');
-
-// placeOrder.addEventListener('click', (e) => {
-//   e.preventDefault();
-
-//   const dishes = [];
-
-//   document.querySelectorAll('.dishName').forEach((ele) => {
-//     console.log(ele.textContent);
-//     console.log(ele.nextElementSibling.children[1].textContent);
-
-//   });
-// });
+    await stripe.redirectToCheckout({ sessionId: session.id });
+  } catch (err) {
+    console.log(err);
+    // showAlert('Error', err);
+  }
+};
