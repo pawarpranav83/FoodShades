@@ -1,0 +1,70 @@
+extends base
+
+block link
+    script(defer src="/js/homepage.js")
+    link(rel="stylesheet" href="./css/homepage.css")
+    script(defer src="/js/overviewHeader.js")
+
+
+block header
+    include _header
+
+block content
+    .homepageBanner
+        button.leftBanner.btnBanner
+            img.btnArrow.btnArrowLeft(src='Images/Arrow.png')
+        button.rightBanner.btnBanner
+            img.btnArrow.btnArrowRight(src='Images/Arrow.png')
+        .homepageBannerImg
+            .banner
+                img.banner1.bannerImg(src='Images/banner1temedit.png' alt='banner')
+            .banner
+                img.banner2.bannerImg(src='Images/banner2temedit.png' alt='banner')
+            .banner
+                img.banner3.bannerImg(src='Images/banner1xedit.png' alt='banner')
+
+    .sortBar
+        .totalRestaurants=`${restaurants.length} Restaurants`
+        .sortBarOptions(data-query=query)
+            a.homepageAll.sortingOptionsIndv.activeSortingOption(href='/overview') Relevence
+            a.homepageTime.sortingOptionsIndv(href='/overview?sort=deliveryTime') Delivery Time
+            a.homepageRating.sortingOptionsIndv(href='/overview?sort=-ratingsAverage') Rating
+            a.homepageVegOnly.sortingOptionsIndv(href='/overview?onlyVeg=true') Veg Only
+            .homepageCategoryCont
+                a.homepageCategory.sortingOptionsIndv Category
+                .subMenu
+                    ul
+                        li
+                            a(href='/overview?foodTypes=Burgers') Burgers
+                        li
+                            a(href='/overview?foodTypes=Wraps') Wraps
+                        li
+                            a(href='/overview?foodTypes=Smoothies') Smoothies
+                        li
+                            a(href='/overview?foodTypes=Sandwiches') Sandwiches
+                        li
+                            a(href='/overview?foodTypes=Salads') Salads
+                        li
+                            a(href='/overview?foodTypes=Deserts') Deserts
+                        li
+                            a(href='/overview?foodTypes=NorthIndian') North Indian
+                        li
+                            a(href='/overview?foodTypes=Pizza') Pizza
+                        li
+                            a(href='/overview?foodTypes=Jain') Jain
+
+    .restaurantCardsGrid
+        each restaurant in restaurants
+            a.restaurantCard(href=`/restaurant/${restaurant.slug}`)
+                img.restaurantCardImg(src=`../Images/${restaurant.imageCover}`, alt='Dish')
+                .restaurantCardName=restaurant.name
+                .restaurantCardType=restaurant.foodTypes.join(', ')
+                .restaurantCardOptions
+                    .restaurantCardRating=`★ ${restaurant.ratingsAverage}`
+                    .restaurantCardDot ●
+                    .restaurantCardDeliveryTime=`${restaurant.deliveryTime} min`
+                    .restaurantCardDot ●
+                    .restaurantCardVegNonVeg
+                    img.restaurantCardVegImg(src='../Images/veg.png', alt='veg')
+                    img.restaurantCardVegImg(src='../Images/non-veg.png', alt='nonveg')
+

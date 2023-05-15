@@ -1,0 +1,33 @@
+extends base
+
+block link
+    link(rel='stylesheet' href='/css/signUp.css')
+    //- link(rel='stylesheet' href='style1.css')
+    script(defer src='/js/signIn.js')
+    script(defer src='/js/signup.js')
+
+block content
+    .container1
+        .signImg
+            img#signUpimage1(src='/Images/signInimage.png')
+            img#signUpimage2(src='/Images/signUpimage.png')
+        .signUpDetails
+            .msg1 Welcome To FoodShades
+            .msg2 Create your Account
+            form.form
+                .email
+                    .emailmsg Email
+                    input#email.emailtext(type='email' name='Email' placeholder='Enter your Email')
+                .password
+                    .emailmsg Password
+                    input#password.emailtext(type='password' name='Password' placeholder='Enter your Password')
+                .password
+                    .emailmsg Repeat Password
+                    input#passwordConfirm.emailtext(type='password' name='Repeat Password' placeholder='Enter your Password')
+                .otherOptions
+                    label(for='checkbox1')
+                        input#checkbox1(type='checkbox')
+                        span#sp1 Show Password
+                .btn
+                    button.signUpbtn SignUp
+            a.signInlink(href='/login') Already have an Account?

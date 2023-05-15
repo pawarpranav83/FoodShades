@@ -1,0 +1,41 @@
+extends base
+
+block link
+    link(rel="stylesheet" href="/css/account.css")
+    script(defer src="/js/account.js")
+
+
+block header
+    include _header2
+
+block content
+    .accountCont
+        .accountDetails
+            .accountAccount
+                .selectedHeading Account Details
+                button.updateAccount.updateData Update
+            form.accountDetailsDisplay
+                .accountName.accoutDetailsDisplayProp
+                    .accountUpdateDetails Name
+                    input#accountNameId.accountInputDisplay(type='text' name='accountName' value=`${user.name}`)
+                .accountEmail.accoutDetailsDisplayProp
+                    .accountUpdateDetails Email
+                    input#accountEmailId.accountInputDisplay(type='text' name='accoutEmail' value=user.email)
+                .accountAddress.accoutDetailsDisplayProp
+                    .accountUpdateDetails Address
+                    input#accountAddressId.accountInputDisplay(type='text' name='accountAddress' value=user.address)
+            form.accountChangePassword
+                .accountAccount
+                    .selectedHeading Change Password
+                    button.updateAccount.updatePassword Update
+                .accountDetailsDisplay
+                    .accountName.accoutDetailsDisplayProp
+                        .accountUpdateDetails Old Password
+                        input#oldPasswordInput.accountInputDisplay(type='password' name='accountName' placeholder='Enter Password')
+                    .accountEmail.accoutDetailsDisplayProp
+                        .accountUpdateDetails New Password
+                        input#newPasswordInput.accountInputDisplay(type='password' name='accoutEmail' placeholder='Enter Password')
+                    .accountAddress.accoutDetailsDisplayProp
+                        .accountUpdateDetails Repeat New Password
+                        input#newPasswordConfirmInput.accountInputDisplay(type='password' name='accountAddress' placeholder='Enter Password')
+

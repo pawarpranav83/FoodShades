@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodShades</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="../js/homepage.js"></script>
+    <link rel="stylesheet" href="../css/homepage.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+  </head>
+  <body>
+    <!-- <div class="header"></div> -->
+    <div class="navbar">
+      <div class="name">FoodShades</div>
+      <div class="navContents">
+        <div class="homepageLocationSearch">
+          <div class="location">
+            <img
+              src="../Images/location.png"
+              alt="Location"
+              class="imgLocation"
+            />
+            <div class="address">Building, City</div>
+          </div>
+          <!-- <input type="text" name="searchBar" placeholder="Search Restaurant" class="homepageSearchBar"> -->
+          <div class="homepageSearchBarDiv">
+            <input
+              type="text"
+              placeholder="Search Restaurant"
+              class="homepageSearchBar"
+              id="searchbar"
+              onkeyup="searchFnc()"
+            />
+            <!-- <img src="Images/search.png" alt="" class="searchIcon" /> -->
+            <!-- <input class="search"> -->
+            <img src="../Images/search.png" alt="" class="searchIcon" />
+          </div>
+        </div>
+        <div class="homepageNavIcons">
+          <div class="homePagePastOrders iconNameDiv">
+            <img
+              src="../Images/pastOrder.svg"
+              alt="Past Orders"
+              data-name="pastOrder"
+              class="homePagePastOrdersImg"
+            />
+            <div class="homePagePastOrderName">Past Orders</div>
+          </div>
+          <div class="homepageAccount iconNameDiv">
+            <img
+              src="../Images/account.svg"
+              alt="Account"
+              class="homepageAccountImg"
+              data-name="account"
+            />
+            <div class="homepageAccountName">Account</div>
+          </div>
+          <div class="homepageLogOut iconNameDiv">
+            <img
+              src="../Images/logOut.svg"
+              alt="Log Out"
+              class="homepageLogOutImg"
+              data-name="logOut"
+            />
+            <div class="homepageLogOutName">Log Out</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="homepageBanner">
+      <button class="leftBanner btnBanner">
+        <img src="../Images/Arrow.png" alt="" class="btnArrow btnArrowLeft" />
+      </button>
+      <button class="rightBanner btnBanner">
+        <img src="../Images/Arrow.png" alt="" class="btnArrow btnArrowRight" />
+      </button>
+      <div class="homepageBannerImg">
+        <div class="banner">
+          <img
+            src="../Images/banner1temedit.png"
+            alt="banner"
+            class="banner1 bannerImg"
+          />
+        </div>
+        <div class="banner">
+          <img
+            src="../Images/banner2temedit.png"
+            alt="banner"
+            class="banner2 bannerImg"
+          />
+        </div>
+        <div class="banner">
+          <img
+            src="../Images/banner1xedit.png"
+            alt="banner"
+            class="banner3 bannerImg"
+          />
+        </div>
+      </div>
+      <!-- <img src="Images/banner2x.png" alt="banner" class="banner2" /> -->
+    </div>
+
+    <div class="sortBar">
+      <div class="totalRestaurants">XXX Restaurants</div>
+      <div class="sortBarOptions">
+        <div class="homepageAll sortingOptionsIndv activeSortingOption">
+          Relevence
+        </div>
+        <div class="homepageTime sortingOptionsIndv">Delivery Time</div>
+        <div class="homepageRating sortingOptionsIndv">Rating</div>
+        <div class="homepageVegOnly sortingOptionsIndv">Veg Only</div>
+        <div class="homepageCategory sortingOptionsIndv">Category</div>
+      </div>
+    </div>
+
+    <div class="restaurantCardsGrid">
+      <div class="restaurantCard">
+        <img src="../Images/pizza.jpg" class="restaurantCardImg" alt="Dish" />
+        <div class="restaurantCardName">Restaurant</div>
+        <div class="restaurantCardType">Types</div>
+        <div class="restaurantCardOptions">
+          <div class="restaurantCardRating">&#9733; 4.5</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardDeliveryTime">50 min</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardVegNonVeg">
+            <img
+              src="../Images/veg.png"
+              alt="veg"
+              class="restaurantCardVegImg"
+            />
+            <img
+              src="../Images/non-veg.png"
+              alt="nonveg"
+              class="restaurantCardVegImg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="restaurantCard">
+        <img src="../Images/pizza.jpg" class="restaurantCardImg" alt="Dish" />
+        <div class="restaurantCardName">Restaurant</div>
+        <div class="restaurantCardType">Types</div>
+        <div class="restaurantCardOptions">
+          <div class="restaurantCardRating">&#9733; 4.5</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardDeliveryTime">50 min</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardVegNonVeg">
+            <img
+              src="../Images/veg.png"
+              alt="veg"
+              class="restaurantCardVegImg"
+            />
+            <img
+              src="../Images/non-veg.png"
+              alt="nonveg"
+              class="restaurantCardVegImg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="restaurantCard">
+        <img src="../Images/pizza.jpg" class="restaurantCardImg" alt="Dish" />
+        <div class="restaurantCardName">Restaurant</div>
+        <div class="restaurantCardType">Types</div>
+        <div class="restaurantCardOptions">
+          <div class="restaurantCardRating">&#9733; 4.5</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardDeliveryTime">50 min</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardVegNonVeg">
+            <img
+              src="../Images/veg.png"
+              alt="veg"
+              class="restaurantCardVegImg"
+            />
+            <img
+              src="../Images/non-veg.png"
+              alt="nonveg"
+              class="restaurantCardVegImg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="restaurantCard">
+        <img src="../Images/pizza.jpg" class="restaurantCardImg" alt="Dish" />
+        <div class="restaurantCardName">Restaurant</div>
+        <div class="restaurantCardType">Types</div>
+        <div class="restaurantCardOptions">
+          <div class="restaurantCardRating">&#9733; 4.5</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardDeliveryTime">50 min</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardVegNonVeg">
+            <img
+              src="../Images/veg.png"
+              alt="veg"
+              class="restaurantCardVegImg"
+            />
+            <img
+              src="../Images/non-veg.png"
+              alt="nonveg"
+              class="restaurantCardVegImg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="restaurantCard">
+        <img src="../Images/pizza.jpg" class="restaurantCardImg" alt="Dish" />
+        <div class="restaurantCardName">Restaurant</div>
+        <div class="restaurantCardType">Types</div>
+        <div class="restaurantCardOptions">
+          <div class="restaurantCardRating">&#9733; 4.5</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardDeliveryTime">50 min</div>
+          <div class="restaurantCardDot">&#9679;</div>
+          <div class="restaurantCardVegNonVeg">
+            <img
+              src="../Images/veg.png"
+              alt="veg"
+              class="restaurantCardVegImg"
+            />
+            <img
+              src="../Images/non-veg.png"
+              alt="nonveg"
+              class="restaurantCardVegImg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

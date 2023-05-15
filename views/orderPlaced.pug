@@ -1,0 +1,65 @@
+extends base
+
+block link
+    link(rel="stylesheet" href="/css/orderPlaced.css")
+    script(defer src="/js/orderPlaced.js")
+    //- script(defer src="/js/header.js")
+
+
+block header
+    include _header2
+
+block content
+    .orderDetailsCont(data-username=order.user._id data-restaurantid=order.restaurant._id)
+        .orderDetailsDisplay
+            .orderedDishesHeading
+                .selectedHeadingOrdered Order Details
+            .dishesOrderDetails
+                .dishesOrderDetailsHeading Dishes Ordered
+                .orderedDishesInfo
+                    
+                    each dish in order.dishes
+                        .orderedDishDisplayRest
+                            .orderedDishDetailsDescriptionRest
+                                .orderedDishDisplayNameRest=dish.name
+                                .orderedDishDisplayPriceRest=`₹${dish.price}`
+                                .orderedDishDescriptionRest=dish.description
+                            div
+                                - if (dish.veg)
+                                    img.orderedVegRest(src='/Images/veg.png')
+                                - else
+                                    img.orderedVegRest(src='/Images/non-veg.png')
+                                //- img.orderedVegRest(src='/Images/veg.png')
+                            .orderedDishDetailsDescriptionRest2
+                                img#orderedDishDescriptionImg(src='/Images/dish1.png')
+                                .orderedDishQuantity=`Quantity: ${dish.quantity}`
+
+        .billDetailsRating
+            .priceSummary
+                .orderedPriceSummaryHeading Bill Details
+                .perDishPriceDetails
+                    each dish in order.dishes
+                        .orderedPriceSummaryIndv
+                            .orderedPriceDish=`${dish.name} x ${dish.quantity}`
+                            .orderedPriceDishPrice=`₹${dish.price * dish.quantity}`
+
+                .orderedPriceSummaryIndvSubtotal
+                    .orderedPriceSubtotal Subtotal
+                    .orderedPriceSubtotalPrice=`₹${order.totalPrice - 40}`
+                .orderedPriceSummaryIndvTotal
+                    .orderedPriceTotal Total
+                    .orderedPriceTotalPrice=`₹${order.totalPrice}`
+            .ratingOrderPlaced
+                .borderContRating
+                    .orderedRatingSummaryHeading Rate Your Order
+                    .ratingImg
+                        button.ratingBtn(data-postn='1')
+                            img.ratingImgStar.ratingBtn1(src='/Images/star.svg')
+                        button.ratingBtn(data-postn='2')
+                            img.ratingImgStar.ratingBtn2(src='/Images/star.svg')
+                        button.ratingBtn(data-postn='3')
+                            img.ratingImgStar.ratingBtn3(src='/Images/star.svg')
+                        button.ratingBtn(data-postn='4')
+                            img.ratingImgStar.ratingBtn4(src='/Images/star.svg')
+                        button.ratingBtn(data-postn='5')
+                            img.ratingImgStar.ratingBtn5(src='/Images/star.svg')

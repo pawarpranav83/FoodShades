@@ -1,0 +1,29 @@
+extends base
+
+block link
+    link(rel='stylesheet', href='/css/index2.css')
+    script(defer, src='/js/index2.js')
+
+block content
+    #mainBg.main.spacer.layer1
+        .buttons
+            a#log1.signUp(href='/signup')
+                | Get Started
+                img#arrow(src='/Images/Arrow2.png', alt='arrow')
+            a#log2.signUp(href='/login') Login
+        #name1.name FoodShades
+        #name2.name Get served as an Emperor
+    .options
+        .cont1
+            img.box1(src='/Images/Food2.png')
+            #info1a.info1(href='#')
+                a(href='/login')  Hungry? 
+            #info1a.info2
+                a(href='/login')  Order Now 
+        .cont2
+            img.box2(src='/Images/restaurant3.png')
+            .info1
+                a#info1b.info1(href='/loginRestaurant') Your restaurant, delivered
+            #info1b.info2
+                a(href='/loginRestaurant')  Add your restaurant 
+    

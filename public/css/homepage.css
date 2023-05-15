@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Poppins';
+}
+
+body {
+  background-color: #ffffff;
+  font-size: 100%;
+}
+
+.homepageBanner {
+  width: 100%;
+  background-color: #f1f1f1;
+  /* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+}
+
+.homepageBannerImg {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  height: 37.5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.banner {
+  position: absolute;
+  transition: transform 1s;
+  margin-top: 3rem;
+}
+
+.bannerImg {
+  width: 100%;
+}
+
+.btnBanner {
+  width: 5rem;
+  height: 5rem;
+  background-color: black;
+  z-index: 1;
+  border-radius: 10rem;
+}
+
+.leftBanner {
+  position: absolute;
+  /* top: 10rem; */
+  top: 32vh;
+  left: 2vw;
+}
+.rightBanner {
+  position: absolute;
+  top: 32vh;
+  left: 94vw;
+}
+
+.btnArrow {
+  height: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.btnArrowLeft {
+  rotate: 180deg;
+}
+
+/* .main {
+} */
+
+.sortBar {
+  /* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+  height: 75px;
+  border-bottom-style: solid;
+  border-width: 2px;
+  /* padding-bottom: 1.5rem; */
+  border-color: rgba(200, 200, 200, 0.5);
+  /* background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+    radial-gradient(
+      91% 146%,
+      rgba(255, 255, 255, 0.5) 47%,
+      rgba(0, 0, 0, 0.5) 100%
+    ); */
+  font-size: 1.7rem;
+  /* background-blend-mode: screen; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 15rem;
+}
+
+.totalRestaurants {
+  padding-bottom: 1.3rem;
+}
+
+.sortBarOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #485563;
+}
+
+.sortingOptionsIndv {
+  padding-bottom: 1.3rem;
+  /* margin-right: 10rem; */
+}
+
+.activeSortingOption {
+  border-bottom-style: solid;
+  border-width: 1px;
+  /* padding-bottom: 1.5rem; */
+  border-color: rgb(0, 0, 0);
+  color: black;
+}
+
+.restaurantCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: ; */
+  column-gap: 3rem;
+  justify-content: flex-start;
+  margin: 2rem 15rem 10rem 15rem;
+}
+
+.restaurantCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+}
+.restaurantCard:hover {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+  /* box-shadow: 5px 5px 2px 5px #29323c; */
+  transform: scale(1.01);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease-in-out;
+}
+
+.restaurantCardImg {
+  width: 25rem;
+}
+.restaurantCardName {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+}
+
+.restaurantCardType {
+  font-size: 1.3rem;
+  margin-top: 0.7rem;
+  color: #485563;
+}
+
+.restaurantCardOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.restaurantCardVegNonVeg {
+  display: flex;
+  flex-direction: row;
+}
+.restaurantCardVegImg {
+  width: 2rem;
+}
+
+.restaurantCardDot {
+  font-size: 0.9rem;
+}
+
+.subMenu {
+  display: none;
+}
+
+.homepageCategoryCont {
+  margin-top: -1rem;
+}
+
+.homepageCategoryCont:hover .subMenu {
+  display: block;
+  position: absolute;
+
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+}
+
+.subMenu ul li {
+  text-decoration: none;
+  list-style: none;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.subMenu ul li:hover {
+  background-color: #f1f1f1;
+}
+
+.hide {
+  display: none;
+}

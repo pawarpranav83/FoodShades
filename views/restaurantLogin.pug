@@ -1,0 +1,33 @@
+extends base
+
+block link
+    //- script(src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js")
+    link(rel='stylesheet' href='/css/signIn.css')
+    script(defer src='/js/signIn.js')
+    script(defer src='/js/restaurantLogin.js')
+
+
+block content 
+    .container1
+        .signImg
+            img#signUpimage1(src='/Images/signInimage.png')
+            img#signUpimage2(src='/Images/signUpimage.png')
+        .signUpDetails
+            .msg1 Welcome Back
+            .msg2 Please Enter your Details
+            form.form(type='POST')
+                .email
+                    label.emailmsg(for='emailtext') Email
+                    input#emailtext(type='email' name='Email' placeholder='Enter your Email' required)
+                .password
+                    label.emailmsg(for='passwordtext') Password
+                    input#passwordtext(type='password' name='Password' placeholder='Enter your Password' required minlength='8')
+                .otherOptions
+                    label(for='checkbox1')
+                        input#checkbox1(type='checkbox')
+                        span#sp1 Show Password
+                    a#fg1(href='#') Forgot Password?
+                .btn
+                    button.signUpbtn(type='submit') SignIn
+            a.signUplink(href='/login') Want to Order?
+

@@ -1,0 +1,66 @@
+extends base
+
+block link
+    link(rel="stylesheet" href="/css/restaurant.css")
+    script(defer src="/js/restaurant.js")
+    script(defer src="/js/restaurantHeader.js")
+
+
+block header
+    include _header
+
+block content 
+    .restContainer(data-username=user.id data-restaurantid=restaurant._id)
+        .details
+            img.rest(src='/Images/pizza.jpg')
+            .restDetails
+                .restName=restaurant.name 
+                .restOtherDetails=restaurant.foodTypes.join(', ')
+                .restOtherDetailsLocation=restaurant.location.address
+                .rating
+                    .restOtherDetails3
+                        #rating1.restOtherDetails=`${restaurant.ratingsAverage}  ★`
+                        #rating1.restOtherDetails 40 min
+                    .restOtherDetails2
+                        .restOtherDetails2 Rating
+                        .restOtherDetails2 Delivery Time
+            .offers
+                h1.offers Offers
+                p.offers Lorem ipsum dolor sit
+                p.offers Lorem ipsum dolor sit
+                p.offers Lorem ipsum dolor sit
+    .dishDetailsCont
+        .dishDetails
+            .dishDisplayCont
+
+                each dish in restaurant.dishes
+                    .dishDisplay
+                        .dishDetailsDescription
+                            .dishDisplayName=dish.name
+                            .dishDisplayPrice=`₹ ${dish.price}`
+                            .dishDescription=dish.description
+                        div
+                            - if (dish.veg)
+                                img.veg(src='/Images/veg.png')
+                            - else
+                                img.veg(src='/Images/non-veg.png')
+
+                        .dishDetailsDescription2
+                            img#dishDescriptionImg(src='/Images/dish1.png')
+                            button.addToCart(data-name=`${dish.name}` data-price=`${dish.price}` data-description=`${dish.description}` data-veg=`${dish.veg}`) Add To Cart
+
+        .cartDetails
+            .cart-rows
+                .item.itemEmpty
+                    .cartEmpty Aren't you starving!
+            .priceSummary
+                .subtotal.priceAlign
+                    div Subtotal
+                    .subtotalPrice ---
+                .shipping.priceAlign
+                    div Shipping
+                    div ₹40
+                .total.priceAlign
+                    div Total
+                    .totalPrice ---
+            button.placeOrder Place Order

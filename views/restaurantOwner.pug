@@ -1,0 +1,89 @@
+extends base
+
+block head 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(href='https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap', rel='stylesheet')
+    title FoodShades | #{title}
+    link(rel="stylesheet", href="/css/footer.css")
+    link(rel="stylesheet", href="/css/header.css")
+    //- script(defer src="/js/header.js")
+    script(defer src="/js/footer.js")
+
+block link
+    script(defer src="/js/restaurantOwner.js")
+    link(rel="stylesheet" href="/css/restaurant.css")
+    link(rel="stylesheet" href="/css/restaurantOwner.css")
+    script(defer src="/js/restaurantOwnerHeader.js")
+
+
+block header
+    include _header3
+
+block content
+    .modalWindowEditRest.hidden(data-operation='')
+        .modalHeader
+            button.modalClosebtn
+                img.modalCloseImg(src='/Images/close.png')
+        .dishNameModal.modalEditDetails
+            .modalEditHeading Dish Name
+            input.modalEditInput#nameDish(type='text' placeholder='Enter Dish Name')
+            .modalEditHeading Image Link
+            input.modalEditInput(type='text' placeholder='Enter Image Link')
+            .priceCategoryModal
+                div
+                    .modalEditHeading Price
+                    input.modalEditInputShort#priceDish(type='text' placeholder='Enter Price')
+                div
+                    .modalEditHeading Veg
+                    input.modalEditInputShort#vegDishBoolInput(type='text' placeholder='true/false')
+            .modalEditHeading Dish Description
+            textarea.modalEditInputArea#descriptionDish(cols='30' rows='10' placeholder='Enter Dish Description')
+        button.dishEditSubmitBtn Update
+    // Restaurant Info Banner
+    .restContainer
+        .details
+            img.rest(src='/Images/pizza.jpg')
+            .restDetails
+                .restName=restaurant.name
+                .restOtherDetails=restaurant.foodTypes.join(', ')
+                .restOtherDetails=restaurant.location.address
+                .rating
+                    .restOtherDetails3
+                        #rating1.restOtherDetails=`${restaurant.ratingsAverage}  ★`
+                        #rating1.restOtherDetails=restaurant.deliveryTime
+                    .restOtherDetails2
+                        .restOtherDetails2 Rating
+                        .restOtherDetails2 Delivery Time
+            .offers
+                h1.offers Offers
+                p.offers Lorem ipsum dolor sit
+                p.offers Lorem ipsum dolor sit
+                p.offers Lorem ipsum dolor sit
+    // Dishes
+    .dishRestDisplayCont
+        .dishDetailsRest
+            .existingDishesHeading
+                .selectedHeading Existing Dishes
+                button.addDish Add Dish
+            .restDishesInfo
+                each dish in restaurant.dishes
+                    .dishDisplayRest(data-dishid=dish._id)
+                        .dishDetailsDescriptionRest
+                            .dishDisplayNameRest=dish.name
+                            .dishDisplayPriceRest=`₹${dish.price}`
+                            .dishDescriptionRest=dish.description
+                        div
+                            - if (dish.veg)
+                                img.veg(src='/Images/veg.png' data-veg='true')
+                            - else
+                                img.veg(src='/Images/non-veg.png' data-veg='false')
+                        .dishDetailsDescriptionRest2
+                            img#dishDescriptionImg(src='/Images/dish1.png')
+                            button.editDish Edit Dish
+
+block append footer 
+    .overlay.hidden

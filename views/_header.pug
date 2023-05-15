@@ -1,0 +1,25 @@
+.navbar
+    a.name(href='/overview') FoodShades
+    .navContents
+        .homepageLocationSearch
+            .location
+                img.imgLocation(src='/Images/location.png', alt='Location')
+                .address=user.location.city
+            // <input type="text" name="searchBar" placeholder="Search Restaurant" class="homepageSearchBar">
+            .homepageSearchBarDiv
+                -if(restaurants)
+                    input#searchbar.homepageSearchBar(type='search', placeholder='Search Restaurant')
+                    img.searchIcon(src='/Images/search.png')
+                -else
+                    input#searchbar.homepageSearchBar(type='search', placeholder='Search Dishes')
+                    img.searchIcon(src='/Images/search.png')
+        .homepageNavIcons
+            .homePagePastOrders.iconNameDiv
+                img.homePagePastOrdersImg(src='/Images/pastOrder.svg', alt='Past Orders', data-name='pastOrder')
+                .homePagePastOrderName Past Orders
+            .homepageAccount.iconNameDiv
+                img.homepageAccountImg(src='/Images/account.svg', alt='Account', data-name='account')
+                .homepageAccountName Account
+            .homepageLogOut.iconNameDiv
+                img.homepageLogOutImg(src='/Images/logOut.svg', alt='Log Out', data-name='logOut')
+                .homepageLogOutName Log Out

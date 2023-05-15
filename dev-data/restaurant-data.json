@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Burger King",
+    "foodTypes": ["Burgers", "Wraps", "Smoothies"],
+    "location": {
+      "type": "Point",
+      "coordinates": [78.1947917, 26.2243224],
+      "address": "Racecourse Rd, Db Mall, Gwalior, 474015, India",
+      "description": "Db Mall"
+    },
+    "dishes": [
+      {
+        "name": "Chicken Whooper",
+        "description": "Our Signature Whopper With 7 Layers Between The Buns. Flame Grilled Chicken Patty, Fresh Onion, Crispy Lettuce, Juicy Tomatoes(seasonal), Tangy Gherkins, Creamy And Smoky Sauces With Xxl Buns. It’S Not A Burger, It’S A Whopper",
+        "veg": false,
+        "price": 200
+      },
+      {
+        "name": "Veg Whooper",
+        "description": "Our Signature Whopper With 7 Layers Between The Buns. Extra Crunchy Veg Patty, Fresh Onion, Crispy Lettuce, Juicy Tomatoes(seasonal), Tangy Gherkins, Creamy And Smoky Sauces With Xxl Buns. It’S Not A Burger, It’S A Whopper",
+        "veg": true,
+        "price": 169
+      },
+      {
+        "name": "Crispy Veg Burger",
+        "description": "Our Best-Selling Burger With Crispy Veg Patty, Fresh Onion And Our Signature Sauce",
+        "veg": true,
+        "price": 70
+      },
+      {
+        "name": "Crispy Chicken Burger",
+        "description": "Our Best-Selling Burger With Crispy Chicken Patty, Onion And Classic Mayo Sauce",
+        "veg": false,
+        "price": 90
+      },
+      {
+        "name": "Veg Crunchy Volcano Wrap",
+        "description": "Be Ready For A Crunchy, Saucy, Explosion. A Crunchy taco Shell Filled With Beans & Veg Mix, Chef'S Secret Sauce, Fresh Onion & Crisp Lettuce.",
+        "veg": true,
+        "price": 70
+      },
+      {
+        "name": "Crispy Chicken Wrap",
+        "description": "Wrap Loaded With Crispy Chicken Patty, Crunchy Onions And Tangy Sauce",
+        "veg": false,
+        "price": 90
+      },
+      {
+        "name": "Chocolate Thick Shake",
+        "description": "Our Signature Chocolate Thick Shake",
+        "veg": false,
+        "price": 169
+      },
+      {
+        "name": "Mango Thick Shake",
+        "description": "Our Signature Mango Thick Shake",
+        "veg": false,
+        "price": 169
+      },
+      {
+        "name": "Berry Blast Thick Shake",
+        "description": "Rich Creamy Black Currant Thick shake",
+        "veg": false,
+        "price": 169
+      }
+    ]
+  },
+  {
+    "name": "Subway",
+    "foodTypes": ["Wraps", "Sandwiches", "Salads", "Deserts"],
+    "location": {
+      "type": "Point",
+      "coordinates": [78.1662611, 26.2091384],
+      "address": "Dindayal Mall, Gwalior, 474015, India",
+      "description": "Dd Mall"
+    },
+    "dishes": [
+      {
+        "name": "Veggie Delite Signature Wraps",
+        "description": "A Wholesome Wrap That Gives You Double Portion Of Nutritious Veggies You Love, With The Best Of Sauces, Packed Inside A Tortilla Of Your Choice.",
+        "veg": true,
+        "price": 295
+      },
+      {
+        "name": "Paneer Tikka Signature Wraps",
+        "description": "Double The Yum With Double Portion Of Roasted Paneer Tikka, Along With Nutritious Veggies And Your Favourite Sauces, Inside A Tortilla Of Your Choice.",
+        "veg": true,
+        "price": 295
+      },
+      {
+        "name": "Tandoori Tofu Signature Wraps",
+        "description": "Get Double Portion Of Soft Tofu Marinated In Tandoori Sauces And Cooked In An Oven, Combined With Your Choice Of Veggies, Sauces, And Wrapped Inside A Tortilla Of Your Choice.",
+        "veg": true,
+        "price": 295
+      },
+      {
+        "name": "Tandoori Chicken Tikka Signature Wraps",
+        "description": "Enjoy Double The Filling In This Hearty Wrap. Double Portion Of Chicken Paired With Nutritious Wonderful Veggies And Your Choice Of Sauces, Inside A Tortilla. Now Thats A Meal For The Soul.",
+        "veg": false,
+        "price": 310
+      },
+      {
+        "name": "Peri Peri Chicken Signature Wraps",
+        "description": "Double Portion Of African Peri-Peri Flavoured Chicken, Along With High Protein Nutritious Veggies And Sauces, Inside A Tortilla Of Your Choice.",
+        "veg": false,
+        "price": 310
+      },
+      {
+        "name": "Paneer Tikka Salad",
+        "description": "Want A Familiar Taste Taken Up A Notch Try The Paneer Tikka Salad. Perfectly Cooked Paneer Tikka Combined With Fresh Veggies And A Dressing Of Your Choice.",
+        "veg": true,
+        "price": 265
+      },
+      {
+        "name": "Tandoori Chicken Tikka Salad",
+        "description": "Double Portion Of African Peri-Peri Flavoured Chicken, Along With High Protein Nutritious Veggies And Sauces, Inside A Tortilla Of Your Choice.",
+        "veg": false,
+        "price": 305
+      },
+      {
+        "name": "Rich Chocolate Truffle Cake",
+        "description": "End Your Meal On A Sweet Note With Our Delicious Truffle Cake.",
+        "veg": true,
+        "price": 125
+      },
+      {
+        "name": "Double Dark Chunk Chocolate Cookie",
+        "description": "Tasty & Chocolatey. Now Enjoy Your Favourite Double Dark Chocolate Chunk Cookie.",
+        "veg": true,
+        "price": 90
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+.navbar
+    .name FoodShades
+    .navContents
+        .homepageLocationSearch
+            .location
+                img.imgLocation(src='/Images/location.png', alt='Location')
+                - if (user)
+                    .address=user.location.city
+                - else
+                    .address City
+            // <input type="text" name="searchBar" placeholder="Search Restaurant" class="homepageSearchBar">
+        .homepageNavIcons
+            .homepageLogOut.iconNameDiv
+                img.homepageLogOutImg(src='/Images/logOut.svg', alt='Log Out', data-name='logOut')
+                .homepageLogOutName Log Out

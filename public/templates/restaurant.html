@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>FoodShades</title>
+
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style3.css" />
+    <script defer src="restaurant.js"></script>
+  </head>
+  <body>
+    <div class="header"></div>
+
+    <div class="navbar">
+      <div class="name">FoodShades</div>
+      <div class="navContents">
+        <div class="location">
+          <img src="Images/location.png" alt="Location" class="imgLocation" />
+          <p class="address">Building, City</p>
+        </div>
+        <img src="Images/basket.png" alt="Cart" class="cart" />
+        <img src="Images/account.png" alt="Account" class="account" />
+        <div class="search">
+          <img src="Images/search.png" alt="" class="searchIcon" />
+        </div>
+      </div>
+    </div>
+
+    <div class="restContainer">
+      <div class="details">
+        <img src="Images/pizza.jpg" alt="" class="rest" />
+        <div class="restDetails">
+          <div class="restName">Restaurant</div>
+          <div class="restOtherDetails">Type</div>
+          <div class="restOtherDetails">Location, Gwalior</div>
+          <div class="rating">
+            <div class="restOtherDetails3">
+              <div class="restOtherDetails" id="rating1">X</div>
+              <div class="restOtherDetails" id="rating1">Y</div>
+            </div>
+            <div class="restOtherDetails2">
+              <div class="restOtherDetails2">Rating</div>
+              <div class="restOtherDetails2">Delivery Time</div>
+            </div>
+          </div>
+        </div>
+        <div class="offers">
+          <h1 class="offers">Offers</h1>
+          <p class="offers">Lorem ipsum dolor sit</p>
+          <p class="offers">Lorem ipsum dolor sit</p>
+          <p class="offers">Lorem ipsum dolor sit</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dishDetailsCont">
+      <div class="dishDetails">
+        <!-- <div class="navSection">
+          <div class="navSectionIndv section1">Section</div>
+          <div class="navSectionIndv section2">Section</div>
+          <div class="navSectionIndv section3">Section</div>
+          <div class="navSectionIndv section4">Section</div>
+        </div> -->
+        <div class="dishDisplayCont">
+          <div class="sectionDisplay" id="section1">
+            <div class="sectionDisplayName">Section</div>
+            <div class="dishDisplay">
+              <div class="dishDetailsDescription">
+                <div class="dishDisplayName">Dish Name</div>
+                <div class="dishDisplayPrice">Price</div>
+                <div class="dishDescription">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione sint aspernatur qui repellendus libero eligendi quo
+                  aut incidunt atque veniam!
+                </div>
+              </div>
+              <div>
+                <img src="Images/veg.png" alt="" class="veg" />
+              </div>
+              <div class="dishDetailsDescription2">
+                <img src="Images/dish1.png" alt="" id="dishDescriptionImg" />
+                <button class="addToCart">Add To Cart</button>
+              </div>
+            </div>
+            <div class="dishDisplay">
+              <div class="dishDetailsDescription">
+                <div class="dishDisplayName">Dish Name</div>
+                <div class="dishDisplayPrice">Price</div>
+                <div class="dishDescription">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione sint aspernatur qui repellendus libero eligendi quo
+                  aut incidunt atque veniam!
+                </div>
+              </div>
+              <div>
+                <img src="Images/veg.png" alt="" class="veg" />
+              </div>
+              <div class="dishDetailsDescription2">
+                <img src="Images/dish1.png" alt="" id="dishDescriptionImg" />
+                <button class="addToCart">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="sectionDisplay" id="section2">
+            <div class="sectionDisplayName">Section</div>
+            <div class="dishDisplay">
+              <div class="dishDetailsDescription">
+                <div class="dishDisplayName">Dish Name</div>
+                <div class="dishDisplayPrice">Price</div>
+                <div class="dishDescription">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione sint aspernatur qui repellendus libero eligendi quo
+                  aut incidunt atque veniam!
+                </div>
+              </div>
+              <div>
+                <img src="Images/veg.png" alt="" class="veg" />
+              </div>
+              <div class="dishDetailsDescription2">
+                <img src="Images/dish1.png" alt="" id="dishDescriptionImg" />
+                <button class="addToCart">Add To Cart</button>
+              </div>
+            </div>
+            <div class="dishDisplay">
+              <div class="dishDetailsDescription">
+                <div class="dishDisplayName">Dish Name</div>
+                <div class="dishDisplayPrice">Price</div>
+                <div class="dishDescription">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione sint aspernatur qui repellendus libero eligendi quo
+                  aut incidunt atque veniam!
+                </div>
+              </div>
+              <div>
+                <img src="Images/veg.png" alt="" class="veg" />
+              </div>
+              <div class="dishDetailsDescription2">
+                <img src="Images/dish1.png" alt="" id="dishDescriptionImg" />
+                <button class="addToCart">Add To Cart</button>
+              </div>
+            </div>
+            <div class="dishDisplay">
+              <div class="dishDetailsDescription">
+                <div class="dishDisplayName">Dish Name</div>
+                <div class="dishDisplayPrice">Price</div>
+                <div class="dishDescription">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione sint aspernatur qui repellendus libero eligendi quo
+                  aut incidunt atque veniam!
+                </div>
+              </div>
+              <div>
+                <img src="Images/veg.png" alt="" class="veg" />
+              </div>
+              <div class="dishDetailsDescription2">
+                <img src="Images/dish1.png" alt="" id="dishDescriptionImg" />
+                <button class="addToCart">Add To Cart</button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="cartDetails">   
+
+        <div class="item cart-row">
+          <img src="Images/dish1.png" alt="" class="dishImg dish1" />
+          <div class="nameCounter">
+            <div class="dishName">Dish Name 1</div>
+            <div class="counter">
+              <button class="decreaseCount countBtn item1">&#8211;</button>
+              <div class="dishCount itme1">X</div>
+              <button class="increaseCount countBtn item1">+</button>
+            </div>
+          </div>
+          <div class="price">XXX</div>
+        </div>
+        
+        <div class="priceSummary">
+          <div class="subtotal priceAlign">
+            <div>Subtotal</div>
+            <div>XXX</div>
+          </div>
+          <div class="shipping priceAlign">
+            <div>Shipping</div>
+            <div>XXX</div>
+          </div>
+          <div class="total priceAlign">
+            <div>Total</div>
+            <div>XXX</div>
+          </div>
+        </div>
+        <button class="placeOrder">Place Order</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="content">
+        <div class="company">
+          <h1>Support</h1>
+          <p>Who are we</p>
+          <p>Careers</p>
+          <p>Team</p>
+          <p>Report Fraud</p>
+        </div>
+        <div class="legal">
+          <h1>Legal</h1>
+          <p>Terms & Conditions</p>
+          <p>Refund & Cancellation</p>
+          <p>Privacy Policy</p>
+          <p>Offer Terms</p>
+        </div>
+        <div class="support">
+          <h1>Support</h1>
+          <p>help@foodshades.abc</p>
+          <p>(+91) 1234567890</p>
+          <p>(+91) 1234567891</p>
+        </div>
+        <a class="nameFooter" href="#mainBg">FoodShades</a>
+        <div class="icons">
+          <img src="Images/facebook.png" alt="" class="mediaHandle" />
+          <img src="Images/linkedin.png" alt="" class="mediaHandle" />
+          <img src="Images/instagram.png" alt="" class="mediaHandle" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

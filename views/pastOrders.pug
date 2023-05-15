@@ -1,0 +1,38 @@
+extends base
+
+block link
+    //- link(rel="stylesheet" href="style2.css")
+    link(rel="stylesheet" href="/css/pastOrders.css")
+    //- script(defer src="/js/header.js")
+
+
+block header
+    include _header2
+
+block content   
+    .pastOrderCont
+        .pastOrderDetails
+            .pastOrderOrders
+                .pastOrderHeading Past Orders
+            .pastOrderList
+                - const dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                - const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                //- each order in orders
+                -for(let j = orders.length - 1; j > -1; j--)
+                    .pastOrderOrder1
+                        .pastOrderImgPrice
+                            img.pastOrder1Img(src='/Images/pizza.jpg')
+                            .pastOrder1Price=`Total Bill: ₹${orders[j].totalPrice}`
+                        .restNameOrderedDateDishes
+                            .restNameOrderedDate
+                                .pastOrderRestDetails
+                                    .pastOrderRestName=orders[j].restaurant.name
+                                    .pastOrderRestLocation=orders[j].restaurant.location.address
+                                    // <div class="pastOrderRestType">Type</div>
+                                .pastOrderDate=`Ordered On: ${dayOfWeek[orders[j].createdAt.getDay()]}, ${month[orders[j].createdAt.getMonth()]} ${orders[j].createdAt.getDate()} ${orders[j].createdAt.getFullYear()}, ${orders[j].createdAt.toLocaleTimeString()}`
+                            - let dishInfo = [];
+                            - for (let i = 0; i < orders[j].dishes.length; i++)
+                                - dishInfo.push(`${orders[j].dishes[i].name} x ${orders[j].dishes[i].quantity}`)
+                            .pastOrderDishesOrdered=`${dishInfo.join(', ')}`
+                                
+
