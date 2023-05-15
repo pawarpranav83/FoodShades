@@ -10,7 +10,7 @@ dishesCont.forEach((ele) => {
   dishes.push({ name, element });
 });
 
-console.log(dishes);
+// console.log(dishes);
 
 const searchIcon = document.querySelector('.searchIcon');
 const searchBarInput = document.querySelector('#searchbar');

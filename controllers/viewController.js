@@ -34,7 +34,7 @@ exports.getOverview = catchAsync(async (req, res) => {
     .filter()
     .sort();
   const restaurants = await features.query;
-  console.log(req.query);
+  // console.log(req.query);
   res.status(200).render('overview', {
     title: 'Overview',
     restaurants,

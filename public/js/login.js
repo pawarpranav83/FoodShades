@@ -58,7 +58,7 @@ const login = async (email, password) => {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes.status);
+    // console.log(finalRes.status);
 
     if (finalRes.status === 'success') {
       showAlert('success', 'Logged in successfully');
@@ -71,13 +71,13 @@ const login = async (email, password) => {
   }
 };
 
-console.log(document.querySelector('.form'));
+// console.log(document.querySelector('.form'));
 document.querySelector('.form').addEventListener('submit', (e) => {
   e.preventDefault();
   e.stopPropagation();
   const email = document.getElementById('emailtext').value;
   const password = document.getElementById('passwordtext').value;
-  console.log('Hi');
+  // console.log('Hi');
 
   login(email, password);
 });

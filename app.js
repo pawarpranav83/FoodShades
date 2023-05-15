@@ -8,6 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const cors = require('cors');
+const compression = require('compression');
 // const pug = require('pug');
 
 const restaurantRouter = require('./routes/restaurantRoute');
@@ -42,9 +43,12 @@ app.use('/api', limiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
 
+app.use(compression());
+
+// TEST MIDDLEWARE
 app.use((req, _res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
+  // console.log(req.cookies);
   next();
 });
 
@@ -68,6 +72,8 @@ app.use(
     whitelist: ['ratingsAverage', 'deliveryTime'],
   })
 );
+
+// ROUTES
 
 app.use('/', viewRouter);
 app.use('/api/v1/restaurants', restaurantRouter);

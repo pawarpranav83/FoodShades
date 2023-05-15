@@ -32,7 +32,7 @@ const updateSettings = async (name, email, address, type) => {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes);
+    // console.log(finalRes);
 
     if (finalRes.status === 'success') {
       showAlert(
@@ -68,7 +68,7 @@ const updatePassword = async (
     });
 
     const finalRes = await res.json();
-    console.log(finalRes);
+    // console.log(finalRes);
 
     if (finalRes.status === 'success') {
       showAlert(
@@ -91,7 +91,7 @@ userDataUpdateBtn.addEventListener('click', (event) => {
   const email = document.querySelector('#accountEmailId').value;
   const name = document.querySelector('#accountNameId').value;
   const address = document.querySelector('#accountAddressId').value;
-  console.log(email, name);
+  // console.log(email, name);
 
   updateSettings(name, email, address, 'data');
 });

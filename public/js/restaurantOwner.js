@@ -79,7 +79,7 @@ const updateDishRequest = async (dishes, operation) => {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes.data);
+    // console.log(finalRes.data);
 
     if (finalRes.status === 'success') {
       showAlert('success', `Dish ${operation}!`);

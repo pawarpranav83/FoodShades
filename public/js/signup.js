@@ -30,7 +30,7 @@ const signup = async (email, password, passwordConfirm) => {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes);
+    // console.log(finalRes);
 
     if (finalRes.status === 'success') {
       showAlert('success', 'Signed up successfully');
@@ -43,14 +43,14 @@ const signup = async (email, password, passwordConfirm) => {
   }
 };
 
-console.log(document.querySelector('.form'));
+// console.log(document.querySelector('.form'));
 document.querySelector('.form').addEventListener('submit', (e) => {
   e.preventDefault();
   e.stopPropagation();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const passwordConfirm = document.getElementById('passwordConfirm').value;
-  console.log('Hi');
+  // console.log('Hi');
 
   signup(email, password, passwordConfirm);
 });

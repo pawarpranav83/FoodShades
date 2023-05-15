@@ -21,10 +21,10 @@ const showAlert = (type, msg) => {
 
 const removeCartItem = (event) => {
   const buttonClicked = event.target;
-  console.log(
-    buttonClicked.parentElement.parentElement.parentElement.parentElement
-      .parentElement
-  );
+  // console.log(
+  //   buttonClicked.parentElement.parentElement.parentElement.parentElement
+  //     .parentElement
+  // );
   buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 
   if (!document.querySelector('.item')) {
@@ -67,7 +67,7 @@ const updateCartTotal = () => {
     totalText.textContent = '₹' + (total + 40);
     finalTotal = total + 40;
   }
-  console.log(finalTotal);
+  // console.log(finalTotal);
 
   return finalTotal;
 };
@@ -177,7 +177,7 @@ const placeOrder = () => {
 
     updateCartTotal();
 
-    console.log(totalPrice);
+    // console.log(totalPrice);
 
     const restContainer = document.querySelector('.restContainer');
     const userId = restContainer.dataset.username;
@@ -193,7 +193,7 @@ const placeOrder = () => {
 const ready = () => {
   const removeCartItemButtons = document.querySelectorAll('.btn-danger');
   removeCartItemButtons.forEach((element) => {
-    console.log('Hi');
+    // console.log('Hi');
     element.addEventListener('click', removeCartItem);
   });
 
@@ -236,7 +236,7 @@ const processingOrder = async (price, dishes, userId, restaurantId) => {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes.data._id);
+    // console.log(finalRes.data._id);
     const orderId = finalRes.data._id;
 
     if (finalRes.status === 'success') {

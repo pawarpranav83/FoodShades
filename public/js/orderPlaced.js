@@ -78,13 +78,13 @@ ratingStars.forEach((ele, i) => {
       }
       removeFill(k);
       rating = k - 1;
-      console.log(rating);
+      // console.log(rating);
       k = 0;
 
       const orderDetailsCont = document.querySelector('.orderDetailsCont');
       const userId = orderDetailsCont.dataset.username;
       const restaurantId = orderDetailsCont.dataset.restaurantid;
-      console.log(rating, userId, restaurantId);
+      // console.log(rating, userId, restaurantId);
       setRating(rating, userId, restaurantId);
     }
   });

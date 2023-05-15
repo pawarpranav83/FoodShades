@@ -4,7 +4,7 @@
 
 navigator.geolocation.getCurrentPosition(
   async (position) => {
-    console.log(position);
+    // console.log(position);
 
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;

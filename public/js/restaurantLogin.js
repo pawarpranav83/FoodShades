@@ -48,7 +48,7 @@ document.querySelector('.form').addEventListener('submit', (e) => {
   e.stopPropagation();
   const email = document.getElementById('emailtext').value;
   const password = document.getElementById('passwordtext').value;
-  console.log('Hi');
+  // console.log('Hi');
 
   login(email, password);
 });

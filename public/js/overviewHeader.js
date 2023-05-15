@@ -12,7 +12,7 @@ restaurants.forEach((ele) => {
   rests.push({ name, element });
 });
 
-console.log(rests);
+// console.log(rests);
 
 const searchIcon = document.querySelector('.searchIcon');
 const searchBarInput = document.querySelector('#searchbar');
