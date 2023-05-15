@@ -3,7 +3,7 @@
     "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "watch:js": "parcel watch ./public/js/index2.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/login.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "parcel build ./public/js/login.js --out-dir ./public/js --out-file bundle.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
