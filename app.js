@@ -16,6 +16,7 @@ const userRouter = require('./routes/userRoute');
 const reviewRouter = require('./routes/reviewRoute');
 const viewRouter = require('./routes/viewRoute');
 const orderRouter = require('./routes/orderRoute');
+const orderController = require('./controllers/orderController');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 // const errorController = require('./controllers/errorController');
@@ -39,6 +40,12 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again in an hour!',
 });
 app.use('/api', limiter);
+
+app.post(
+  '/webhook-checkout',
+  express.raw({ type: 'application/json' }),
+  orderController.webhookCheckout
+);
 
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
