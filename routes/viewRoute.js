@@ -35,4 +35,11 @@ router.get(
   authController.protect,
   viewController.getRestaurantOwner
 );
+
+router.get(
+  '/orderDel/:orderId',
+  authController.protect,
+  viewController.deleteOrder
+);
+
 module.exports = router;

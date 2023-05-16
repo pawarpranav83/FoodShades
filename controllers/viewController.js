@@ -86,3 +86,9 @@ exports.getRestaurantOwner = catchAsync(async (req, res) => {
     restaurant,
   });
 });
+
+exports.deleteOrder = catchAsync(async (req, res) => {
+  await Orders.findByIdAndDelete(req.params.orderId);
+
+  res.status(200).redirect('/overview');
+});
