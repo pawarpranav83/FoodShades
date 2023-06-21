@@ -47,7 +47,7 @@ For Restaurant Owners
 <img src="public/Screenshot/AddDishModal.png"></img>
 <img src="public/Screenshot/EditDishModal.png"></img>
 
-### ✨ [Deployed site](https://foodshades-prod.up.railway.app/)
+### ✨ [Deployed site](https://foodshades.onrender.com/)
 
 # Features Implemented
 
