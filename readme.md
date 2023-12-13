@@ -94,34 +94,50 @@ For Restaurant Owners
 
 ### Back-End
 
-- Get Routes
+- View Routes
 
 ```
 /
-/home
-/useraccount
-/users/login
-/users/logout
-/VegOnly
-/ByRating
-/ByDeliveryTime
-/Category=:dish
-/Restaurants
-/form=:restname
+/login
+/signup
+/loginRestaurant
+/overview
+/pastOrders/:userId
+/restaurant/:slug
+/me
+/orderPlaced/:id
+/restaurantOwner/:restaurantId
+/orderDel/:orderId
 /resAuth
 /orderDetails
 /pastOrders
 ```
 
-- Post Routes
+- API Routes
 
 ```
-/users/register
-/resUpdate=:restname
-/updateUserInfo
-/updateUserPassword
-/cartItems
-/ratingUpdate
+/api/v1/restaurants
+/api/v1/restaurants/:restaurantId/reviews
+/api/v1/restaurants/:id
+/api/v1/restaurants/:restId/:dishId
+
+/api/v1/users/signup
+/api/v1/users/login
+/api/v1/users/logout
+/api/v1/users/forgotPassword
+/api/v1/users/resetPassword/:token
+/api/v1/users/me
+/api/v1/users/updatePassword
+/api/v1/users/updateMe
+/api/v1/users
+/api/v1/users/:id
+
+/api/v1/reviews
+/api/v1/reviews/:id
+
+/api/v1/orders
+/api/v1/orders/:id
+/api/v1/orders/checkout-session/:orderId
 ```
 
 # Technologies/Libraries/Packages Used
@@ -131,19 +147,22 @@ For Restaurant Owners
 | bcrypt          | To store hashed password in database                                                             |
 | dotenv          | To keep db connection string, client id, client secret key safe                                  |
 | nodemon         | To run application in dev mode                                                                   |
-| pg              | To Connect to AWS RDS                                                                            |
-| body-parser     | To process data sent in an HTTP request body                                                     |
-| ejs             | To Embed JavaScript code in a template that is then used to generate HTML                        |
-| express-flash   | To Implement flash messages                                                                      |
-| express-session | To store or access session data                                                                  |
-| passport        | to authenticate requests, which it does through an extensible set of plugins known as strategies |
-| passport-local  | Passport strategy for authenticating with a username and password                                |
+| pug             | To Embed JavaScript code in a template that is then used to generate HTML                        |
+| cookie-parser   | To store or access session (JWT token) data                                                      |
+| jsonwebtoken    | To authenticate requests                                                                         |
+| helmet          | Help secure Express/Connect apps with various HTTP headers                                       |
+| hpp             | Express middleware to protect against HTTP Parameter Pollution attacks                           |
+| mongoose        | Mongoose MongoDB ODM                                                                             |
+| stripe          | For handling payments                                                                            |
+| nodemailer      | For sending e-mail from your Node.js applications                                                |
+| slugify         | Slugifies a String                                                                               |
+
 
 ## Local Setup
 
-execute node app.js in terminal after cloning the project
+Execute node app.js in terminal after cloning the project
 
-Note that database connection string, passport client id & secret keys are in env file which are not uploaded on github
+Note that database connection string & secret keys are in env file which are not uploaded on github
 
 ### Built With
 
@@ -151,26 +170,12 @@ Note that database connection string, passport client id & secret keys are in en
 
 ## Contact
 
-👤 **Udit Karan Tomar,Pranav Panwar**
-
-### Udit Karan Tomar (2021IMT-104)
-
-- Github: [@udit10101](https://github.com/udit10101)
-- LinkedIn: [@udit-tomar](https://www.linkedin.com/in/udit-tomar-a07323235/)
-- Gmail: [mail](mailto:uditkarantomar2003@gmail.com)
-- Instagram: [@uditktomar](https://www.instagram.com/uditktomar/)
-
 ### Pranav Panwar (2021IMT-074)
 
 - Github: [@pawarpranav83](https://github.com/pawarpranav83)
 - LinkedIn: [@pranav-pawar](https://www.linkedin.com/in/pranav-pawar-b54954242/)
 - Gmail: [mail](mailto:pawar.pranav83@gmail.com)
 - Instagram: [@pranav.pawar\_](https://www.instagram.com/pranav.pawar_/)
-
-## Mentors:
-
-We are very thankful to our mentors [@Sohan2410](https://github.com/sohan2410) Sir, kartikey Sir, and Chirag sir who helped us immensely in our website,
-even at festive season too :)
 
 ## Show your support
 
